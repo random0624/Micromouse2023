@@ -42,7 +42,7 @@ int orientation(int &orient, char turning) {
     return orient;
 }
 
-bool ai = true;
+bool aie = true;
 
 void updateCoordinates(int &x, int &y, int orient) {
     if (orient == 0) {
