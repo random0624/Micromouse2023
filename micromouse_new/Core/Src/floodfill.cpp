@@ -4,6 +4,7 @@
  *  Created on: Aug 26, 2023
  *      Author: ransomliu
  */
+//chatgpt
 
 #include "API.h"
 #include "floodfill.h"
@@ -40,6 +41,8 @@ int orientation(int &orient, char turning) {
     }
     return orient;
 }
+
+bool ai = true;
 
 void updateCoordinates(int &x, int &y, int orient) {
     if (orient == 0) {
