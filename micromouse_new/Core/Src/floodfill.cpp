@@ -4,8 +4,7 @@
  *  Created on: Aug 26, 2023
  *      Author: ransomliu
  */
-//chatgpt
-
+//jason wants this change to show up
 #include "API.h"
 #include "floodfill.h"
 #include "main.h"
@@ -41,8 +40,6 @@ int orientation(int &orient, char turning) {
     }
     return orient;
 }
-
-bool aie = true;
 
 void updateCoordinates(int &x, int &y, int orient) {
     if (orient == 0) {
