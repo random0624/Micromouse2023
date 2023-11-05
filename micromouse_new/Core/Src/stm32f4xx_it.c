@@ -199,5 +199,19 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /* USER CODE BEGIN 1 */
+/**
+  * @brief This function handles External Line 0 interrupt (button press begins mouse code).
+  */
+void EXTI0_IRQHandler(void)
+{
+    /* Check if the EXTI line triggered the interrupt */
+    if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_0) != RESET)
+    {
+        /* Clear the EXTI line pending bit */
+        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_0);
 
+        /* Call a function to start your micromouse algorithm */
+        StartMicromouseAlgorithm();
+    }
+}
 /* USER CODE END 1 */
