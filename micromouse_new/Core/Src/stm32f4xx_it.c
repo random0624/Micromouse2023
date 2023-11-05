@@ -200,7 +200,7 @@ void SysTick_Handler(void)
 
 /* USER CODE BEGIN 1 */
 /**
-  * @brief This function handles External Line 0 interrupt (button press begins mouse code).
+  * @brief This function handles External Line 0 interrupt (button press begins floodfill).
   */
 void EXTI0_IRQHandler(void)
 {
