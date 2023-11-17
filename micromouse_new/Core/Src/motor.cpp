@@ -12,7 +12,7 @@
 #include "main.h"
 
 //sets Left OR Right Motor to
-void Motor_Forward(int x) {
+void Set_Motor_Forward(int x) {
 	//left motor forward
 	if(x = 0){
 		HAL_GPIO_WritePin(LMOTOR_GPIO_PORT, LMOTOR_DIR1_PIN, GPIO_PIN_SET);
@@ -25,7 +25,7 @@ void Motor_Forward(int x) {
 	}
 }
 
-void Motor_Reverse(int x) {
+void Set_Motor_Reverse(int x) {
 	//left motor backward
 	if(x = 0){
 		HAL_GPIO_WritePin(LMOTOR_GPIO_PORT, LMOTOR_DIR1_PIN, GPIO_PIN_RESET);
@@ -74,8 +74,8 @@ void SetRightMotorSpeed(uint16_t speed) {
 
 void RightTurn(uint16_t LeftSpeed, uint16_t RightSpeed) {
 
-    Motor_Forward(1);
-    Motor_Reverse(0);
+    Set_Motor_Forward(0);
+    Set_Motor_Reverse(1);
 
     SetLeftMotorSpeed(LeftSpeed);
     SetRightMotorSpeed(RightSpeed);
@@ -83,8 +83,8 @@ void RightTurn(uint16_t LeftSpeed, uint16_t RightSpeed) {
 
 void LeftTurn(uint16_t LeftSpeed, uint16_t RightSpeed) {
 
-    Motor_Forward(0);
-    Motor_Reverse(1);
+    Set_Motor_Forward(1);
+    Set_Motor_Reverse(0);
 
     SetLeftMotorSpeed(LeftSpeed);
     SetRightMotorSpeed(RightSpeed);
@@ -95,7 +95,7 @@ void LeftTurn(uint16_t LeftSpeed, uint16_t RightSpeed) {
 
 //MUST READ FROM DIFFERENT SENSORS TO CALCULATE DIFFERENT LEFT AND RIGHT SPEEDS
 // Function to read IR sensor values
-float ReadIRSensor() {
+float ReadIRSensor(/*fill with specific sensors*/) {
   // Implement your code to read IR sensor values
   // Return the distance via converting the read voltage into a float that the PID can use
   // ...
